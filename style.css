@@ -1,0 +1,209 @@
+:root {
+    /* Color */
+    --white-color: #fff;
+    --black-color: #140a00;
+    --blue-color: #045fd4;
+    --red-color: #ff0000;
+    --grey-dark-color: #909090;
+    --grey-light-color: #e0e0e0;
+
+    /* Size */
+    --padding: 12px;
+    --avatar-size: 36px;
+
+    /* FontSize */
+    --font-large: 18px;
+    --font-medium: 14px;
+    --font-small: 12px;
+    --font-micro: 10px;
+}
+
+* {
+    padding:0;
+    margin:0;
+    box-sizing: border-box ;
+}
+button, button:focus {
+    border:none;
+    cursor: pointer;
+    outline: none;
+    background-color: var(--white-color);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding:var(--padding);
+    background-color: var(--black-color);
+    color: var(--white-color)
+}
+header .logo {
+    font-size: var(--font-large);
+}
+header .logo i {
+    color:var(--red-color);
+}
+header .icons .fa-search {
+    margin-right: var(--padding);
+}
+.player {
+    text-align: center;
+    top:0;
+    background-color:var(--grey-dark-color);
+    position:sticky;
+}
+.player video {
+    width: 100%;
+    height: 100%;
+    max-width: 1800px;
+}
+body > .info {
+    padding: var(--padding);
+}
+.hashTags {
+    display: flex;
+    color:var(--blue-color);
+    list-style: none;
+    font-size: var(--font-small);
+}
+.hashTags li {
+    padding-right: var(--padding);
+}
+.info .metadata {
+    margin: var(--padding);
+}
+
+.info .metadata .titleAndBtn {
+    display: flex;
+}
+
+.info .metadata .titleAndBtn .title {
+    font-size:var(--font-medium);
+    margin-right: var(--padding);
+}
+.info .metadata .titleAndBtn .title.clamp {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+}
+.info .metadata .titleAndBtn .moreBtn {
+    height:100%;
+    transition: transform 300ms ease-in;
+}
+.info .metadata .titleAndBtn .moreBtn.clicked {
+    transform: rotate(180deg);
+}
+.info .views {
+    font-size: var(--font-small);
+    color: var(--grey-dark-color);
+}
+
+.info .actions {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    margin: var(--padding) 0;
+}
+.info .actions button {
+    display: flex;
+    flex-direction: column;
+    font-size:var(--font-small);
+    align-items: center;
+}
+.info .actions button i {
+    margin: calc(var(--padding) / 2) 0;
+    font-size: 16px;
+    color: var(--grey-dark-color);
+}
+.info .actions button i.active{
+    color: var(--blue-color);
+}
+.info .channel {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid var(--grey-light-color);
+    border-bottom: 1px solid var(--grey-light-color);
+
+}
+.info .channel .metadata {
+    display: flex;
+    align-items: center;
+}
+.info .channel .metadata .info {
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+}
+.info .channel .metadata img {
+    width: var(--avatar-size);
+    height: var(--avatar-size);
+    border-radius: 50%;
+    margin-left: 5px;
+}
+.info .channel .metadata .info .name {
+    font-size: var(--font-medium);
+}
+.info .channel .metadata .info .subscribers {
+    font-size: var(--font-small);
+    color: var(--grey-dark-color);
+}
+.info .channel .subscribe {
+    margin-right: 20px;
+    text-transform: uppercase;
+    color: var(--red-color);
+    font-size: var(--font-medium);
+}
+.upnext {
+    padding: 0 var(--padding);
+}
+.upnext > .title {
+    font-size: var(--font-medium);
+    color: var(--grey-dark-color);
+    margin-bottom: var(--padding);
+}
+.upnext li {
+    display: flex;
+}
+.upnext .item {
+    display: flex;
+    margin-top: var(--padding);
+}
+.upnext .item .img {
+    flex: 1 1 35%;
+    width: 100%;
+    margin-right: var(--padding);
+}
+.upnext .item .img img {
+    width: 100%;
+}
+.upnext .item .info {
+    flex: 1 1 60%;
+}
+.upnext .item .info .title {
+    font-weight: bold;
+}
+.upnext .item .moreBtn {
+    flex: 1 1 5%;
+}
+.upnext .item .info {
+    display: flex;
+    flex-direction: column;
+}
+.infoAndUpNext {
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (min-width:1200px) {
+    .infoAndUpNext {
+        flex-direction: row;
+        margin: var(--padding);
+    }
+    .infoAndUpNext .info {
+        flex: 1 1 60%;
+    }
+    .infoAndUpNext .upnext {
+        flex: 1 1 20%;
+    }
+}
